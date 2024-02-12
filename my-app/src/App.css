@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MainSignUpContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.admin{
+position: absolute;
+top: 40px;
+right: 300px;
+color: red;
+cursor: pointer;
+}
+
+.SignUpBox {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.SignUpFields {
+  width: 430px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+
+.SignUpFields h1 {
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.SignUpFields p {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.SignUpFields p span {
+  color: red;
+  cursor: pointer;
+}
+
+.Form {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.loginForm{
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+/* Login */
+
+
+.ForgetPassword {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ForgetPassword p {
+  color: red;
+  cursor: pointer;
+}
+
+/* Forget Page */
+.ForgetPasswordBox {
+  width: 400px;
+  height: 400px
+}
+
+.ForgetPasswordField {
+  width: 330px;
+  height: 280px;
+}
+
+.ForgetPasswordField Form {
+  gap: 40px;
+}
+
+/* Welcome */
+
+.WelcomeContainer {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 15px;
+  background-color: rgb(243, 240, 237);
+}
+
+/* Header */
+
+.HeaderMainContainer {
+  width: 100%;
+  height: 6vh;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.ProfileContainer {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.JobsLogOutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.jobsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.LogOutConatainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Jobs */
+
+.AllJobsContainer {
+  width: 50%;
+  height: 92.3vh;
+  padding-top: 10px;
+  overflow: scroll;
+  scrollbar-width: none;
+  padding-bottom: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+
+}
+
+.AllJobsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.AllJobs {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.adminAlljobs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Jobs {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.CreateJobBox {
+  width: 550px;
+  height: 650px;
+}
+
+.CreateJobFields {
+  width: 500px;
+  height: 600px;
+}
+
+/*Profile */
+
+.MainMyProfileContainer{
+width: 100%;
+height: 100vh;
+background-color: rgb(243, 240, 237);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
+
+}
+
+.MyProfileContainer{
+  width: 40%;
+    /* height: 92.3vh; */
+    height: max-content;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* justify-content: center;
+    align-items: center; */
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+.MyProfile{
+  width: 93%;
+  height: max-content;
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+ 
+  /* border:  1px solid black; */
+}
+
+.MyJobContainer{
+  width: 40%;
+    /* height: 92.3vh; */
+    display: flex;
+    padding-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: center;
+    height: max-content;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.Deatils{
+  width: 93%;
+  /* height: 35vh; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutinfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
