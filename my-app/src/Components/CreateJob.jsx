@@ -6,11 +6,13 @@ import { useNavigate} from 'react-router-dom';
 
 const CreateJob = () => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
+    const [loading, setLoading] = useState(false); // Add loading state for the submit button
     const navigate = useNavigate();
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : null;
 
     const onFinish = async (values) => {
-        const allValues = { ...values, createdBy: user.id._id, disabled:false }
+        setLoading(true); // Set loading to true when submitting
+        const allValues = { ...values, createdBy: user.id._id, disabled: false }
         try {
             await axios.post('http://localhost:8000/createjob', allValues);
             setSuccessMessage(true)
@@ -20,22 +22,25 @@ const CreateJob = () => {
             }, 2000);
         } catch (error) {
             console.log(error)
+        } finally {
+            setLoading(false); // Set loading back to false after submission is done
         }
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    return (<>
-        <Space
-            direction="vertical"
-            style={{
-                width: '100%',
-                height: '5px',
-                alignItems: 'center',
-                transition: '0.5s'
-            }}>
-            {showSuccessMessage && <Alert message='Successfully Job Created' type="success" showIcon />}
-        </Space>
+    return (
+        <>
+            <Space
+                direction="vertical"
+                style={{
+                    width: '100%',
+                    height: '5px',
+                    alignItems: 'center',
+                    transition: '0.5s'
+                }}>
+                {showSuccessMessage && <Alert message='Successfully Job Created' type="success" showIcon />}
+            </Space>
         <div className='MainSignUpContainer'>
             <div className='SignUpBox  CreateJobBox'>
                 <div className='SignUpFields CreateJobFields'>
@@ -127,9 +132,14 @@ const CreateJob = () => {
 
                         <Form.Item
                         >
-                            <Button style={{ width: '100%' }} type="primary" htmlType="submit">
-                                Submit
-                            </Button>
+                            <Button
+                                    style={{ width: '100%' }}
+                                    type="primary"
+                                    htmlType="submit"
+                                    loading={loading} // Set loading state for the submit button
+                                >
+                                    Submit
+                                </Button>
                         </Form.Item>
                     </Form>
                 </div>

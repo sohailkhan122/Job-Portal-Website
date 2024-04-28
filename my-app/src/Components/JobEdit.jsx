@@ -7,7 +7,7 @@ const JobEdit = () => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
     const [data, setdata] = useState({});
     const navigate = useNavigate();
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : null;
     const { id } = useParams()
 
     useEffect(() => {
@@ -56,6 +56,7 @@ const JobEdit = () => {
             <div className='SignUpBox  CreateJobBox'>
                 <div className='SignUpFields CreateJobFields'>
                     <h1>Update Job</h1>
+                    
                     <Form
                         className='Form'
                         onFinish={onFinish}
@@ -69,6 +70,7 @@ const JobEdit = () => {
                             jobtype: data.jobtype,
                         }}
                     >
+                        {console.log(data)}
                         <Form.Item
                             label="Job Tittle"
                             name="jobtittle"

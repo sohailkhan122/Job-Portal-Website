@@ -13,12 +13,12 @@
   position: relative;
 }
 
-.admin{
-position: absolute;
-top: 40px;
-right: 300px;
-color: red;
-cursor: pointer;
+.admin {
+  position: absolute;
+  top: 40px;
+  right: 300px;
+  color: red;
+  cursor: pointer;
 }
 
 .SignUpBox {
@@ -64,7 +64,7 @@ cursor: pointer;
   margin: 0 auto;
 }
 
-.loginForm{
+.loginForm {
   width: 100%;
   padding-top: 50px;
   display: flex;
@@ -181,7 +181,8 @@ cursor: pointer;
   flex-direction: column;
   gap: 15px;
 }
-.adminAlljobs{
+
+.adminAlljobs {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -208,32 +209,33 @@ cursor: pointer;
 
 /*Profile */
 
-.MainMyProfileContainer{
-width: 100%;
-height: 100vh;
-background-color: rgb(243, 240, 237);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 15px;
+.MainMyProfileContainer {
+  width: 100%;
+  height: max-content;
+  /* background-color: rgb(243, 240, 237); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 85px;
 
 }
 
-.MyProfileContainer{
-  width: 40%;
-    /* height: 92.3vh; */
-    height: max-content;
-    margin-top: 15px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    /* justify-content: center;
+.MyProfileContainer {
+  width: 60%;
+  /* height: 92.3vh; */
+  height: max-content;
+  margin-top: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* justify-content: center;
     align-items: center; */
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  }
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
-.MyProfile{
+.MyProfile {
   width: 93%;
   height: max-content;
   display: flex;
@@ -242,24 +244,24 @@ gap: 15px;
   flex-direction: row;
   align-items: center;
   margin: 0 auto;
- 
+
   /* border:  1px solid black; */
 }
 
-.MyJobContainer{
+.MyJobContainer {
   width: 40%;
-    /* height: 92.3vh; */
-    display: flex;
-    padding-bottom: 30px;
-    background-color: white;
-    border-radius: 10px;
-    justify-content: center;
-    height: max-content;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  /* height: 92.3vh; */
+  display: flex;
+  padding-bottom: 30px;
+  background-color: white;
+  border-radius: 10px;
+  justify-content: center;
+  height: max-content;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
 }
 
-.Deatils{
+.Deatils {
   width: 93%;
   /* height: 35vh; */
   margin: 0 auto;
@@ -268,7 +270,7 @@ gap: 15px;
   gap: 10px;
 }
 
-.aboutinfo{
+.aboutinfo {
   display: flex;
   flex-direction: column;
   margin-left: 20px;

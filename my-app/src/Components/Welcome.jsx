@@ -5,7 +5,7 @@ import AllJobs from './AllJobs';
 
 const Welcome = () => {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"))
+  const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : null;
   useEffect(() => {
     if (!user) {
       navigate('/login')

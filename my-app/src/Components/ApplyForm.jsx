@@ -8,7 +8,7 @@ const ApplyForm = () => {
     const [showErrorMessage, setErrorMessage] = useState(false);
     const [message, setMessage] = useState('');
     const navigate = useNavigate()
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : null;
     const { id } = useParams();
 
     const onFinish = async (values) => {
