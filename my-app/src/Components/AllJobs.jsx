@@ -4,38 +4,36 @@ import axios from 'axios'
 import { TailSpin } from 'react-loader-spinner'
 
 const AllJobs = () => {
-  const [fatchAllJob, setFatchAllJob] = useState([])
   const [filterdata, setfilterdata] = useState([])
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get(
-      "http://localhost:8000/fatchAllJobs",
+      "https://job-portal-website-x40p.onrender.com/fatchAllJobs",
     ).then((response) => {
-      setFatchAllJob(response.data)
       const filteredData = response.data.filter((item) => !item.disabled);
       setfilterdata(filteredData);
     }).catch((error) => {
       console.log(error)
     }).finally(() => {
-      setLoading(false); // Update loading state when fetching is done
+      setLoading(false);
     });
   }, [])
 
   return (
     <div className='AllJobsContainer'>
       {loading ? (
-     <TailSpin style={{display:'flex',justifyContent:'center',alignItems:'center'}}
-              visible={true}
-              height="100vh"
-              width="100"
-              color="#4fa94d"
-              ariaLabel="tail-spin-loading"
-              radius="1"
-              wrapperStyle={{}}
-              wrapperClass=""
-            />
-   
+        <TailSpin style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          visible={true}
+          height="100vh"
+          width="100"
+          color="#4fa94d"
+          ariaLabel="tail-spin-loading"
+          radius="1"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+
       ) : (
         <div className='AllJobs'>
           <div>

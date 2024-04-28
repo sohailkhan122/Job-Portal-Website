@@ -9,7 +9,7 @@ const DisabledJobs = () => {
     const fetchData = async () => {
       try {
         console.log("Fetching data...");
-        const response = await axios.get("http://localhost:8000/fatchAllJobs");
+        const response = await axios.get("https://job-portal-website-x40p.onrender.com/fatchAllJobs");
 
         const filteredData = response.data.filter((item) => item.disabled === true);
 

@@ -10,13 +10,13 @@ const DetailPage = () => {
     const [data, setData] = useState({});
     const [owner, setOwner] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [editLoading, setEditLoading] = useState(false); // Add loading state for edit button
-    const [deleteLoading, setDeleteLoading] = useState(false); // Add loading state for delete button
+    const [editLoading, setEditLoading] = useState(false);
+    const [deleteLoading, setDeleteLoading] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/singleJobs/${id}`);
+                const response = await axios.get(`https://job-portal-website-x40p.onrender.com/singleJobs/${id}`);
                 setData(response.data);
                 if (response.data.createdBy === user.id._id) {
                     setOwner(true);
@@ -33,24 +33,24 @@ const DetailPage = () => {
 
     const handleDelete = async () => {
         try {
-            setDeleteLoading(true); // Set delete button loading state to true
-            await axios.delete(`http://localhost:8000/singledelete/${data._id}`);
+            setDeleteLoading(true);
+            await axios.delete(`https://job-portal-website-x40p.onrender.com/singledelete/${data._id}`);
             navigate('/');
         } catch (error) {
             console.error(error);
         } finally {
-            setDeleteLoading(false); // Reset delete button loading state
+            setDeleteLoading(false);
         }
     }
 
     const handleEdit = async () => {
         try {
-            setEditLoading(true); // Set edit button loading state to true
+            setEditLoading(true);
             navigate(`/jobEdit/${data._id}`);
         } catch (error) {
             console.error(error);
         } finally {
-            setEditLoading(false); // Reset edit button loading state
+            setEditLoading(false);
         }
     }
 

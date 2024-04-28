@@ -12,7 +12,7 @@ const Welcome = () => {
     } else {
       navigate("/")
     }
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [navigate])
   return (
     <div className='WelcomeContainer'>

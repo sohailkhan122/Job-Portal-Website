@@ -16,8 +16,8 @@ const Header = () => {
   }
 
   const logOut = () => {
-   localStorage.clear()
-   navigate('/login')
+    localStorage.clear()
+    navigate('/login')
   }
   return (
     <div className='HeaderMainContainer'>

@@ -8,13 +8,13 @@ const Login = () => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
     const [showErrorMessage, setErrorMessage] = useState(false);
     const [message, setMessage] = useState('');
-    const [loading, setLoading] = useState(false); // Add loading state for submit button
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const onFinish = async (values) => {
-        setLoading(true); // Set loading state to true when form is submitted
+        setLoading(true);
         try {
-            const response = await axios.post('http://localhost:8000/userLogIn', values);
+            const response = await axios.post('https://job-portal-website-x40p.onrender.com/userLogIn', values);
             const decoded = jwtDecode(response.data.token);
             localStorage.setItem('user', JSON.stringify(decoded))
             setMessage(response.data.msg)
@@ -32,7 +32,7 @@ const Login = () => {
                 }, 2000);
             }
         } finally {
-            setLoading(false); // Set loading state to false when response is received
+            setLoading(false);
         }
     };
 
@@ -54,7 +54,7 @@ const Login = () => {
                 {showErrorMessage && <Alert message={message} type="error" />}
             </Space>
             <div className='MainSignUpContainer'>
-                <h3 className='admin' onClick={()=>navigate('/adminLogin')}>Admin</h3>
+                <h3 className='admin' onClick={() => navigate('/adminLogin')}>Admin</h3>
                 <div className='SignUpBox'>
                     <div className='SignUpFields'>
                         <h1>Log In</h1>
@@ -110,7 +110,7 @@ const Login = () => {
                                     style={{ width: '100%' }}
                                     type="primary"
                                     htmlType="submit"
-                                    loading={loading} // Set loading state for the submit button
+                                    loading={loading}
                                 >
                                     Submit
                                 </Button>

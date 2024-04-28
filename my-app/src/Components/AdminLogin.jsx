@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { Alert, Button, Form, Input, Space } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AdminLogin = () => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
     const [message, setMessage] = useState('');
-    const [loading, setLoading] = useState(false); // Add loading state for submit button
-    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     const onFinish = async (values) => {
-        setLoading(true); // Set loading state to true when form is submitted
+        setLoading(true);
         try {
-            const response = await axios.post('http://localhost:8000/AdminLogIn', values);
+            const response = await axios.post('https://job-portal-website-x40p.onrender.com/AdminLogIn', values);
             localStorage.setItem('admin', JSON.stringify(response.data.msg))
             setMessage(response.data.msg)
             setSuccessMessage(true)
@@ -23,7 +21,7 @@ const AdminLogin = () => {
         } catch (error) {
             console.log(error)
         } finally {
-            setLoading(false); // Set loading state to false when response is received
+            setLoading(false);
         }
     };
 
@@ -84,7 +82,7 @@ const AdminLogin = () => {
                                     style={{ width: '100%' }}
                                     type="primary"
                                     htmlType="submit"
-                                    loading={loading} // Set loading state for the submit button
+                                    loading={loading}
                                 >
                                     Submit
                                 </Button>

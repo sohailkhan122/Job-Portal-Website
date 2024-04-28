@@ -27,7 +27,7 @@ function App() {
       <Route path="/heelo" element={<AdminDashbord />}></Route>
       <Route path="/adminLogin" element={<AdminLogin />}></Route>
     </Routes>
-    </>
+  </>
   );
 }
 

@@ -18,8 +18,7 @@ const { Header, Sider, Content } = Layout;
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
-  const [selectedMenuKey, setSelectedMenuKey] = useState('1'); // Default selected menu key
-
+  const [selectedMenuKey, setSelectedMenuKey] = useState('1');
   const handleMenuClick = (key) => {
     setSelectedMenuKey(key);
   };
@@ -31,14 +30,13 @@ const AdminDashboard = () => {
   const renderContent = () => {
     switch (selectedMenuKey) {
       case '1':
-        return <ApplyUser/>;
+        return <ApplyUser />;
       case '2':
-        return <AdminJobs/>;
-        case '3':
-          return <DisabledJobs/>;
-          case '4':
-        return navigate('/login') ;
-      // Add more cases for additional menu items if needed
+        return <AdminJobs />;
+      case '3':
+        return <DisabledJobs />;
+      case '4':
+        return navigate('/login');
       default:
         return null;
     }
@@ -105,7 +103,7 @@ const AdminDashboard = () => {
             minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
-            overflow:'scroll'
+            overflow: 'scroll'
           }}
         >
           {renderContent()}

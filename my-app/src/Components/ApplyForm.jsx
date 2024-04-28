@@ -14,7 +14,7 @@ const ApplyForm = () => {
     const onFinish = async (values) => {
         const allvalues = { ...values, jobId: id, userId: user.id._id }
         try {
-            const response = await axios.post('http://localhost:8000/applyForm', allvalues);
+            const response = await axios.post('https://job-portal-website-x40p.onrender.com/applyForm', allvalues);
             setSuccessMessage(true)
             setTimeout(() => {
                 setSuccessMessage(false)

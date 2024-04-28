@@ -5,7 +5,7 @@ const ApplyUser = () => {
   const [fatchAllApply, setfatchAllApply] = useState([])
   useEffect(() => {
     axios.get(
-      "http://localhost:8000/fatchAllApply",
+      "https://job-portal-website-x40p.onrender.com/fatchAllApply",
     ).then((response) => {
       setfatchAllApply(response.data)
     }).catch((error) => {
@@ -15,9 +15,9 @@ const ApplyUser = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/singleApplydelete  /${id}`);
+      await axios.delete(`https://job-portal-website-x40p.onrender.com/singleApplydelete  /${id}`);
       axios.get(
-        "http://localhost:8000/fatchAllApply",
+        "https://job-portal-website-x40p.onrender.com/fatchAllApply",
       ).then((response) => {
         setfatchAllApply(response.data)
       }).catch((error) => {

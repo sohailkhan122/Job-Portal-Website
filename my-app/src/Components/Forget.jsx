@@ -7,13 +7,13 @@ const Forget = () => {
 
     const onFinish = async (values) => {
 
-      console.log(values)
-            try {
-                const response = await axios.post('http://localhost:8000/forgetPassword',values);
-                console.log(response) 
-            } catch (error) {
-                console.log(error)
-            }
+        console.log(values)
+        try {
+            const response = await axios.post('https://job-portal-website-x40p.onrender.com/forgetPassword', values);
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
     }
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);

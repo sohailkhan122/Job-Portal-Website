@@ -13,7 +13,7 @@ const JobEdit = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/singleJobs/${id}`);
+                const response = await axios.get(`https://job-portal-website-x40p.onrender.com/singleJobs/${id}`);
                 setdata(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -26,7 +26,7 @@ const JobEdit = () => {
     const onFinish = async (values) => {
         const allValues = { ...values, createdBy: user.id._id }
         try {
-            await axios.put(`http://localhost:8000/jobEdit/${id}`, allValues);
+            await axios.put(`https://job-portal-website-x40p.onrender.com/jobEdit/${id}`, allValues);
             setSuccessMessage(true)
             setTimeout(() => {
                 setSuccessMessage(false)
@@ -56,12 +56,11 @@ const JobEdit = () => {
             <div className='SignUpBox  CreateJobBox'>
                 <div className='SignUpFields CreateJobFields'>
                     <h1>Update Job</h1>
-                    
+
                     <Form
                         className='Form'
                         onFinish={onFinish}
                         onFinishFailed={onFinishFailed}
-                        // autoComplete="off"
                         initialValues={{
                             jobtittle: data.jobtittle,
                             company: data.company,
