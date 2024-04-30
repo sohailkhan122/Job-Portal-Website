@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Alert, Button, Form, Input, Space } from 'antd';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate ();
 
     const onFinish = async (values) => {
         setLoading(true);
